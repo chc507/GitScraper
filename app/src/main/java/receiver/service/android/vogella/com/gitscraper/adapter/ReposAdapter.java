@@ -63,7 +63,7 @@ public class ReposAdapter extends RecyclerView.Adapter<ReposAdapter.ReposViewHol
             @Override
             public void onClick(View v) {
                 Context context = holder.itemView.getContext();
-                Intent intent = new Intent(holder.itemView.getContext(), RepoDetailActivity.class);
+                Intent intent = new Intent(context, RepoDetailActivity.class);
                 intent.putExtra("repo", gitHubRepo);
                 context.startActivity(intent);
             }

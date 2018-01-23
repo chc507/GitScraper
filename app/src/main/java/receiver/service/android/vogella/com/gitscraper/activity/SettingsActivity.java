@@ -48,8 +48,6 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent intent = new Intent(SettingsActivity.this, RepoListActivity.class);
-        startActivity(intent);
         finish();
     }
 }

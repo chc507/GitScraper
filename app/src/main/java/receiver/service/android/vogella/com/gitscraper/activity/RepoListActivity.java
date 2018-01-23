@@ -50,7 +50,7 @@ public class RepoListActivity extends AppCompatActivity {
     EditText editSearch;
 
     //Default Username
-    String username = "vannesschancc";
+    String QueryKey = "vannesschancc";
 
     //TAG
     private final static String TAG = "RepoList Activity";
@@ -72,8 +72,6 @@ public class RepoListActivity extends AppCompatActivity {
         //Get custom toolbar;
         mToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
-        //setActionBar(mToolbar);
-
         //Linear layout
         linearLayout = findViewById(R.id.linearLayout);
 
@@ -109,29 +107,8 @@ public class RepoListActivity extends AppCompatActivity {
 
     //load repos
     public void loadRepositories() {
-
-        /*
         GitHubRepoEndPoints apiService = APIClient.getClient().create(GitHubRepoEndPoints.class);
-        //Call<List<GitHubRepo>> call = apiService.getRepo("AndroidComponents");
-        Call<List<GitHubRepo>> call = apiService.getRepo("AndroidComponents");
-        Log.e(TAG, username);
-        call.enqueue(new Callback<List<GitHubRepo>>() {
-            @Override
-            public void onResponse(Call<List<GitHubRepo>> call, Response<List<GitHubRepo>> response) {
-                mDataSource.clear();
-                mDataSource.addAll(response.body());
-                mAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onFailure(Call<List<GitHubRepo>> call, Throwable t) {
-                Log.e(TAG, t.getMessage());
-            }
-        });
-        */
-        GitHubRepoEndPoints apiService = APIClient.getClient().create(GitHubRepoEndPoints.class);
-        Call<GitHubRepoResponse> call = apiService.getRepo("AndroidComponents");
-        Log.e(TAG, username);
+        Call<GitHubRepoResponse> call = apiService.getRepo(QueryKey);
         call.enqueue(new Callback<GitHubRepoResponse>() {
             @Override
             public void onResponse(Call<GitHubRepoResponse> call, Response<GitHubRepoResponse> response) {
@@ -175,14 +152,20 @@ public class RepoListActivity extends AppCompatActivity {
             action.setCustomView(R.layout.toolbar_searchbar);//add the custom view
             action.setDisplayShowTitleEnabled(false); //hide the title
 
-            //editSearch = action.getCustomView().findViewById(R.id.edtSearch); //the text editor
+            editSearch = action.getCustomView().findViewById(R.id.edtSearch); //the text editor
+            editSearch.setEnabled(true);
+            editSearch.setVisibility(View.VISIBLE);
+
+
 
             //this is a listener to do a search when the user clicks on search button
             editSearch.setOnEditorActionListener(new TextView.OnEditorActionListener() {
                 @Override
                 public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                     if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                        doSearch();
+                        //doSearch();
+                        QueryKey = editSearch.getText().toString();
+                        loadData();
                         return true;
                     }
                     return false;
@@ -201,10 +184,6 @@ public class RepoListActivity extends AppCompatActivity {
         }
     }
 
-    private void doSearch() {
-
-    }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -218,7 +197,7 @@ public class RepoListActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int i = item.getItemId();
         if (i == R.id.settings) {
-            startActivity(new Intent(this, SettingsActivity.class));
+            startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
             return true;
         } else if (i == R.id.refresh) {
             loadData();

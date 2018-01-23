@@ -9,50 +9,16 @@ import com.google.gson.JsonObject;
 import com.google.gson.annotations.SerializedName;
 
 public class GitHubRepo implements Parcelable {
-    //@SerializedName("name")
     private String name;
-
-
-    //@SerializedName("owner.login")
     private String owner;
-
-
-    //@SerializedName("stargazers_count")
     private String stars;
-
-    //@SerializedName("description")
     private String description;
-
-    //@SerializedName("language")
     private String language;
-
-    //@SerializedName("watchers_count")
     private String watchers;
-
-    //@SerializedName("owner")
 
     public GitHubRepo() {
 
     }
-
-    /*
-    public GitHubRepo(
-            String language,
-            String description,
-            String name,
-            String owner,
-            String stars,
-            String watchers) {
-
-        this.setLanguage(language);
-        this.setDescription(description);
-        this.setName(name);
-        this.setStars(stars);
-        this.setOwner(owner);
-        this.setWatchers(watchers);
-
-    }
-    */
 
     protected GitHubRepo(Parcel in) {
         name = in.readString();

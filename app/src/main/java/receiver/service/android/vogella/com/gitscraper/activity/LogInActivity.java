@@ -132,10 +132,6 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        //Hide app bar for full screen
-        //ActionBar actionBar = getSupportActionBar();
-        //actionBar.hide();
-
         //getting the reference from useremail, password, and textview
         emailEditText  = findViewById(R.id.txtemail);
         passwordEditText  = findViewById(R.id.txtpass);

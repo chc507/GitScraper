@@ -1,8 +1,12 @@
 package receiver.service.android.vogella.com.gitscraper.activity;
 
+import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import receiver.service.android.vogella.com.gitscraper.R;
 import receiver.service.android.vogella.com.gitscraper.model.GitHubRepo;
@@ -59,4 +63,5 @@ public class RepoDetailActivity extends AppCompatActivity {
         super.onBackPressed();
         finish();
     }
+
 }

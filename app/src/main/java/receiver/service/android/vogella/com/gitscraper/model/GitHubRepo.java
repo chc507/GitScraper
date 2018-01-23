@@ -9,34 +9,33 @@ import com.google.gson.JsonObject;
 import com.google.gson.annotations.SerializedName;
 
 public class GitHubRepo implements Parcelable {
-    @SerializedName("name")
+    //@SerializedName("name")
     private String name;
 
 
-    @SerializedName("owner.login")
+    //@SerializedName("owner.login")
     private String owner;
 
 
-    @SerializedName("stargazers_count")
+    //@SerializedName("stargazers_count")
     private String stars;
 
-    @SerializedName("description")
+    //@SerializedName("description")
     private String description;
 
-    @SerializedName("language")
+    //@SerializedName("language")
     private String language;
 
-    @SerializedName("watchers_count")
+    //@SerializedName("watchers_count")
     private String watchers;
 
-    @SerializedName("owner")
-    private GitHubUser ownerObj;
-
+    //@SerializedName("owner")
 
     public GitHubRepo() {
 
     }
 
+    /*
     public GitHubRepo(
             String language,
             String description,
@@ -53,6 +52,7 @@ public class GitHubRepo implements Parcelable {
         this.setWatchers(watchers);
 
     }
+    */
 
     protected GitHubRepo(Parcel in) {
         name = in.readString();
@@ -132,7 +132,7 @@ public class GitHubRepo implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
-        dest.writeString(ownerObj.getName());
+        dest.writeString(owner);
         dest.writeString(stars);
         dest.writeString(description);
         dest.writeString(language);

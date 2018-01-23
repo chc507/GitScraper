@@ -7,58 +7,56 @@
     android:orientation="horizontal"
     android:layout_marginTop="12dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/repoDetailName"
-            android:textStyle="bold"
-            android:textColor="@color/green_normal"
-            android:textSize="16sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/repoDetailName"
+        android:textStyle="bold"
+        android:textColor="@color/green_normal"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
-        <TextView
-            android:id="@+id/repoDetailDescription"
-            android:textColor="@color/red_dark"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_below="@+id/repoDetailName"
+        android:id="@+id/repoDetailDescription"
+        android:textColor="@color/red_dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
-        <TextView
-            android:id="@+id/repoDetailOwner"
-            android:textStyle="italic"
-            android:textColor="@color/blue_dark"
-            android:textSize="14sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_below="@id/repoDetailDescription"
+        android:id="@+id/repoDetailOwner"
+        android:textStyle="italic"
+        android:textColor="@color/blue_dark"
+        android:textSize="14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
-        <TextView
-            android:id="@+id/repoDetailLanguage"
-            android:textStyle="italic"
-            android:textColor="@color/blue_dark"
-            android:textSize="14sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_below="@+id/repoDetailOwner"
+        android:id="@+id/repoDetailLanguage"
+        android:textStyle="italic"
+        android:textColor="@color/blue_dark"
+        android:textSize="14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
-        <TextView
-            android:id="@+id/repoDetailStars"
-            android:textStyle="italic"
-            android:textColor="@color/blue_dark"
-            android:textSize="14sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_below="@+id/repoDetailLanguage"
+        android:id="@+id/repoDetailStars"
+        android:textStyle="italic"
+        android:textColor="@color/blue_dark"
+        android:textSize="14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
-        <TextView
-            android:id="@+id/repoDetailWatchers"
-            android:textStyle="italic"
-            android:textColor="@color/blue_dark"
-            android:textSize="14sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-
-    </LinearLayout>
+    <TextView
+        android:layout_below="@+id/repoDetailStars"
+        android:id="@+id/repoDetailWatchers"
+        android:textStyle="italic"
+        android:textColor="@color/blue_dark"
+        android:textSize="14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </RelativeLayout>

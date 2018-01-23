@@ -21,10 +21,6 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_session);
 
-        //Hide app bar for full screen
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
-
 
         logoutBtn = findViewById(R.id.logout);
         logoutBtn.setOnClickListener(this);
@@ -46,5 +42,14 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
             startActivity(intent);
             finish();
         }
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(SettingsActivity.this, RepoListActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

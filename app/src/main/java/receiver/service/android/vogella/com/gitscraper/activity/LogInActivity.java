@@ -111,7 +111,7 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
                         //Intent intent = new Intent(LogInActivity.this,RepoListActivity.class);
-                        Intent intent = new Intent(LogInActivity.this,SettingsActivity.class);
+                        Intent intent = new Intent(LogInActivity.this,LogInActivity.class);
                         intent.putExtra("email",wEmail);
                         startActivity(intent);
                         finish();
@@ -133,8 +133,8 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_login);
 
         //Hide app bar for full screen
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
+        //ActionBar actionBar = getSupportActionBar();
+        //actionBar.hide();
 
         //getting the reference from useremail, password, and textview
         emailEditText  = findViewById(R.id.txtemail);

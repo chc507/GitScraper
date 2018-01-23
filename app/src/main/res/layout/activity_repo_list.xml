@@ -8,6 +8,10 @@
     android:background="@color/gray_normal"
     tools:context=".activity.RepoListActivity"
     android:id="@+id/linearLayout">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_searchbar">
+    </include>
 
     <android.support.v7.widget.RecyclerView
         android:padding="5dp"

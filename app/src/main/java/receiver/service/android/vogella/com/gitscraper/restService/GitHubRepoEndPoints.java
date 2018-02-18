@@ -10,6 +10,7 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface GitHubRepoEndPoints {
+    //Query for GitHub Api
     @GET("search/repositories")
     Call<GitHubRepoResponse> getRepo(@Query("q") String repoName);
 
